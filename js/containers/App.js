@@ -1,12 +1,19 @@
-import React, {PropTypes} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import {Navbar, Nav, NavItem, NavDropdown} from 'react-bootstrap'
 //import {LinkContainer} from 'react-router-bootstrap'
 import LinkContainer from '../components/LinkContainer'
+import PropTypes from 'prop-types'
+import {Route} from 'react-router-dom'
+
+import Vote from './Vote'
+import Ranks from './Ranks'
+import Donate from './Donate'
+import Changes from './Changes'
 
 
 @connect(state => ({routerState: state.router}))
-export default class App extends React.Component {
+class App extends React.Component {
     static propTypes =
         { children: PropTypes.node
         };
@@ -37,7 +44,10 @@ export default class App extends React.Component {
                 </Navbar.Collapse>
               </Navbar>
               <div className="container">
-                {this.props.children}
+                <Route path="/:version/vote" component={Vote} />
+                <Route path="/:version/ranks" component={Ranks} />
+                <Route path="/donate" component={Donate} />
+                <Route path="/changes" component={Changes} />
                 <footer>
                   Website © 2014 <a href="mailto:mithrandi@mithrandi.net">Tristan Seligmann</a> — I do not hold the copyright to any content from <a href="http://bindingofisaac.com/">The Binding of Isaac</a> — Special thanks to <a href="https://www.reddit.com/r/bindingofisaac/">/r/bindingofisaac</a> and <a href="http://platinumgod.co.uk/">platinumgod.co.uk</a> — Come hang out in <a href="https://www.reddit.com/r/isaacranks">/r/isaacranks</a>!
                 </footer>
@@ -46,3 +56,6 @@ export default class App extends React.Component {
         )
     }
 }
+
+
+export default App

@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 const isModifiedEvent = (event) =>
     !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
@@ -79,7 +80,7 @@ export default class LinkContainer extends Component {
             activeStyle,
             style,
             isActive: getIsActive,
-            ...props,
+            ...props
         } = this.props;
 
         const href = this.context.router.history.createHref(

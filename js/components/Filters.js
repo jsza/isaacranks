@@ -1,4 +1,5 @@
-import React, {PropTypes as P} from 'react'
+import React from 'react'
+import P from 'prop-types'
 import IP from 'react-immutable-proptypes'
 import {Button, ButtonToolbar, ButtonGroup} from 'react-bootstrap'
 import FilterButton from './FilterButton'

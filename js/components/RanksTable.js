@@ -1,4 +1,5 @@
-import React, {PropTypes as P} from 'react'
+import React from 'react'
+import P from 'prop-types'
 import {Set} from 'immutable'
 import IP from 'react-immutable-proptypes'
 import {Table} from 'react-bootstrap'

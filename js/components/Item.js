@@ -1,4 +1,5 @@
-import React, {PropTypes as P} from 'react'
+import React from 'react'
+import P from 'prop-types'
 import ItemIcon from './ItemIcon'
 
 export default class Item extends React.Component {

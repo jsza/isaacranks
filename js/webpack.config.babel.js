@@ -1,8 +1,8 @@
-var path = require('path');
-var webpack = require('webpack');
+import path from 'path'
+import webpack from 'webpack'
 
 
-module.exports = function(env) {
+export default function(env) {
     return (
     { entry: path.resolve(__dirname)
     , output:

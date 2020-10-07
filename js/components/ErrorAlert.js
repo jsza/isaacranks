@@ -1,4 +1,5 @@
-import React, {PropTypes as P} from 'react'
+import React from 'react'
+import P from 'prop-types'
 import {Button, Alert} from 'react-bootstrap'
 
 export default class ErrorAlert extends React.Component {

@@ -1,4 +1,5 @@
-import React, {PropTypes as P} from 'react'
+import React from 'react'
+import P from 'prop-types'
 import {Col, Panel, Button, OverlayTrigger, Tooltip} from 'react-bootstrap'
 
 const HotkeyOverlay = (props) => {

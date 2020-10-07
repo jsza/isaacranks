@@ -1,9 +1,5 @@
 parser: 'babel-eslint'
 rules:
-  indent:
-    - 2
-    - 4
-    - SwitchCase: 1
   quotes:
     - 2
     - single
@@ -36,9 +32,9 @@ env:
 extends:
   - 'eslint:recommended'
   - 'plugin:react/recommended'
-ecmaVersion: 6
 parserOptions:
   sourceType: 'module'
+  ecmaVersion: 6
   ecmaFeatures:
     jsx: true
     experimentalObjectRestSpread: true

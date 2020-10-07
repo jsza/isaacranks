@@ -6,10 +6,15 @@ import rootReducer from '../reducers'
 import fetchMiddleware from '../middleware/fetch'
 
 export default function configureStore(history) {
-    return createStore(
-        rootReducer,
-        applyMiddleware(
-            thunkMiddleware,
-            fetchMiddleware,
-            routerMiddleware(history)))
+  const composeEnhancers =
+    process.env.NODE_ENV !== 'production' &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ||
+    compose
+
+  return createStore(
+    rootReducer,
+    composeEnhancers(applyMiddleware(
+      thunkMiddleware,
+      fetchMiddleware,
+      routerMiddleware(history))))
 }

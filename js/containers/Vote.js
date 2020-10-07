@@ -1,4 +1,5 @@
-import React, {PropTypes as P} from 'react'
+import React from 'react'
+import P from 'prop-types'
 import IP from 'react-immutable-proptypes'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'

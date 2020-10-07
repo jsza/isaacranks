@@ -1,4 +1,5 @@
-import React, {PropTypes as P} from 'react'
+import React from 'react'
+import P from 'prop-types'
 import zfill from 'zero-fill'
 
 export default class ItemIcon extends React.Component {
