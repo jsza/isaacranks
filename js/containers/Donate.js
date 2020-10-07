@@ -23,7 +23,7 @@ export default class Donate extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="mb-3">
         <Jumbotron>
           <h1>Support this site</h1>
           <p>If you would like to support this site, there are a few ways you can do this below</p>

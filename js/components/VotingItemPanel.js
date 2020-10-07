@@ -12,7 +12,7 @@ export default class VotingItemPanel extends React.Component {
   };
 
   render() {
-    const {ballot} = this.props
+    const {ballot, hotkeyIcon, hotkeyName, ...props} = this.props
     if (!ballot.get('ballot'))
       return (
         <VotingPanel bsStyle="primary" title="...">
@@ -25,8 +25,9 @@ export default class VotingItemPanel extends React.Component {
                    title={ballot.get('name')}
                    label="Choose"
                    onVote={ballot.get('onVote')}
-                   hotkeyName={this.props.hotkeyName}
-                   hotkeyIcon={this.props.hotkeyIcon}>
+                   hotkeyName={hotkeyName}
+                   hotkeyIcon={hotkeyIcon}
+                   {...props}>
         <ItemIcon isaacId={ballot.get('isaacId')} href={ballot.get('wiki')} title={ballot.get('name')} />
         "{ballot.get('description')}"
       </VotingPanel>

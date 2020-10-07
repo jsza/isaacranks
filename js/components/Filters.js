@@ -8,14 +8,14 @@ import allFilters from '../constants/filters'
 
 const FilterGroup = (props) => {
   return (
-    <ButtonGroup>
+    <ButtonToolbar className="mb-1">
       {props.allFilters.map(([name, label]) =>
          <FilterButton name={name}
                        key={name}
                        label={label}
                        activeFilters={props.activeFilters}
                        onToggle={props.onToggle} />)}
-    </ButtonGroup>
+    </ButtonToolbar>
     )
 }
 
@@ -37,13 +37,17 @@ export default class Filters extends React.Component {
                    activeFilters={filters.get(ft)}
                    onToggle={(name) => onToggle(ft, name)} />).toArray()
     return (
-      <ButtonToolbar>
+      <div className="mb-2">
         {filterGroups}
-        <ButtonGroup>
-          <Button bsSize="small" onClick={onAll}>All</Button>
-          <Button bsSize="small" onClick={onNone}>None</Button>
-        </ButtonGroup>
-      </ButtonToolbar>
+        <ButtonToolbar>
+          <Button className="mr-1" variant="primary" size="sm" onClick={onAll}>
+            All
+          </Button>
+          <Button variant="primary" size="sm" onClick={onNone}>
+            None
+          </Button>
+        </ButtonToolbar>
+      </div>
     )
   }
 }

@@ -14,6 +14,14 @@ export default class FilterButton extends React.Component {
   render() {
     const {name, activeFilters, label, onToggle} = this.props
     const active = activeFilters.has(name) ? true : false
-    return <Button bsSize="small" active={active} onClick={() => onToggle(name)}>{label}</Button>
+    return (
+      <Button className="mr-1"
+              size="sm"
+              variant="outline-secondary"
+              active={active}
+              onClick={() => onToggle(name)}>
+        <span style={{color: active ? 'inherit' : 'rgb(200, 200, 200)'}}>{label}</span>
+      </Button>
+    )
   }
 }

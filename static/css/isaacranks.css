@@ -1,12 +1,10 @@
-body { padding-top: 70px; }
-
-.voting-enter {
+.voting-enter, .voting-appear {
     opacity: 0;
-    transition: opacity .15s linear;
 }
 
-.voting-enter.voting-enter-active {
+.voting-enter-active, .voting-appear-active {
     opacity: 1;
+    transition: opacity .15s linear;
 }
 
 div {

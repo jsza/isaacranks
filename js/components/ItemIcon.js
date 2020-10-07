@@ -11,7 +11,7 @@ export default class ItemIcon extends React.Component {
 
   render() {
     const itemId = zfill(3, this.props.isaacId)
-    const className = `center-block icons icons-collectibles_${itemId}`
+    const className = `mx-auto icons icons-collectibles_${itemId}`
     return (
       <a className={className} href={this.props.href} title={this.props.title} />
       )

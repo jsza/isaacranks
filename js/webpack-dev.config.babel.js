@@ -31,7 +31,22 @@ export default
         , exclude: /node_modules/
         , include: __dirname
         }
+      , { test: /\.scss$/
+        , exclude: /node_modules/
+        , use: ['style-loader', 'css-loader', 'sass-loader']
+        }
+      // , { test: /\.ttf$/
+      //   , exclude: /node_modules/
+      //   , use:
+      //     [ { loader: 'ttf-loader'
+      //       , options:
+      //         { name: './font/[hash].[ext]',
+      //         }
+      //       }
+      //     ]
+      //   }
       ]
+
     }
   , devServer:
     { host: 'localhost'

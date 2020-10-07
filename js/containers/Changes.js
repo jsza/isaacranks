@@ -2,7 +2,7 @@ import React from 'react'
 import P from 'prop-types'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {Jumbotron, Panel} from 'react-bootstrap'
+import {Jumbotron, Card, Col} from 'react-bootstrap'
 import {Changes as ChangesRecord} from '../reducers/changes'
 import * as ChangesActions from '../actions/Changes'
 import ErrorAlert from '../components/ErrorAlert'
@@ -41,17 +41,22 @@ export default class Changes extends React.Component {
       content = <ErrorAlert title="Unable to load changelog:" error={error} onReset={actions.loadChanges} />
     } else if (changes) {
       const changelog = changes.map(entry =>
-        [ <dt>{entry.get(0)}</dt>
-        , <dd>
+        <>
+          <Col as="dt" md="2" className="text-right">
+            {entry.get(0)}
+          </Col>
+          <Col as="dd" md="10">
             <ul>{entry.get(1).map(line => <li>{line}</li>)}</ul>
-          </dd>
-        ])
+          </Col>
+        </>)
       content = (
-        <Panel>
-          <dl className="dl-horizontal">
-            {changelog}
-          </dl>
-        </Panel>
+        <Card>
+          <Card.Body>
+            <dl className="row">
+              {changelog}
+            </dl>
+          </Card.Body>
+        </Card>
         )
     }
     return <div>{header}{content}</div>

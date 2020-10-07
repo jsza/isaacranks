@@ -55,8 +55,10 @@ export default class Vote extends React.Component {
     const {actions, voting} = this.props
     const header = (
         <div className="jumbotron">
-          <h1>Rank items</h1>
-          <p>Please select the item you would prefer below:</p>
+          <h1><big>Rank items</big></h1>
+          <big>
+            <p>Please select the item you would prefer below:</p>
+          </big>
         </div>
       )
     const error = voting.get('error')

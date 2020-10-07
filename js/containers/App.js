@@ -1,8 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Navbar, Nav, NavItem, NavDropdown} from 'react-bootstrap'
-//import {LinkContainer} from 'react-router-bootstrap'
-import LinkContainer from '../components/LinkContainer'
+import {Navbar, Nav, NavDropdown, Container} from 'react-bootstrap'
+import {LinkContainer} from 'react-router-bootstrap'
 import PropTypes from 'prop-types'
 import {Route} from 'react-router-dom'
 
@@ -21,29 +20,29 @@ class App extends React.Component {
     render() {
         return (
             <div>
-              <Navbar inverse fixedTop>
-                <Navbar.Header>
-                  <Navbar.Brand><a href="/">Isaac Ranks</a></Navbar.Brand>
+              <Navbar bg="dark" variant="dark" sticky="top">
+                <Container>
+                  <Navbar.Brand href="/">Isaac Ranks</Navbar.Brand>
                   <Navbar.Toggle />
-                </Navbar.Header>
-                <Navbar.Collapse>
-                  <Nav navbar>
-                    <NavDropdown eventKey="0" title="Vote" id="nav-dropdown-vote">
-                      <LinkContainer to="/afterbirthplus/vote"><NavItem eventKey="0.1">Afterbirth+</NavItem></LinkContainer>
-                      <LinkContainer to="/afterbirth/vote"><NavItem eventKey="0.2">Afterbirth</NavItem></LinkContainer>
-                      <LinkContainer to="/rebirth/vote"><NavItem eventKey="0.3">Rebirth</NavItem></LinkContainer>
-                    </NavDropdown>
-                    <NavDropdown eventKey="1" title="Ranks" id="nav-dropdown-ranks">
-                      <LinkContainer to="/afterbirthplus/ranks"><NavItem eventKey="1.1">Afterbirth+</NavItem></LinkContainer>
-                      <LinkContainer to="/afterbirth/ranks"><NavItem eventKey="1.2">Afterbirth</NavItem></LinkContainer>
-                      <LinkContainer to="/rebirth/ranks"><NavItem eventKey="1.3">Rebirth</NavItem></LinkContainer>
-                    </NavDropdown>
-                    <LinkContainer to="/donate"><NavItem eventKey="2">Donate</NavItem></LinkContainer>
-                    <LinkContainer to="/changes"><NavItem eventKey="3">News</NavItem></LinkContainer>
-                  </Nav>
-                </Navbar.Collapse>
+                  <Navbar.Collapse>
+                    <Nav>
+                      <NavDropdown title="Vote" id="nav-dropdown-vote">
+                        <LinkContainer to="/afterbirthplus/vote"><NavDropdown.Item>Afterbirth+</NavDropdown.Item></LinkContainer>
+                        <LinkContainer to="/afterbirth/vote"><NavDropdown.Item>Afterbirth</NavDropdown.Item></LinkContainer>
+                        <LinkContainer to="/rebirth/vote"><NavDropdown.Item>Rebirth</NavDropdown.Item></LinkContainer>
+                      </NavDropdown>
+                      <NavDropdown title="Ranks" id="nav-dropdown-ranks">
+                        <LinkContainer to="/afterbirthplus/ranks"><NavDropdown.Item>Afterbirth+</NavDropdown.Item></LinkContainer>
+                        <LinkContainer to="/afterbirth/ranks"><NavDropdown.Item>Afterbirth</NavDropdown.Item></LinkContainer>
+                        <LinkContainer to="/rebirth/ranks"><NavDropdown.Item>Rebirth</NavDropdown.Item></LinkContainer>
+                      </NavDropdown>
+                      <LinkContainer to="/donate"><Nav.Link>Donate</Nav.Link></LinkContainer>
+                      <LinkContainer to="/changes"><Nav.Link>News</Nav.Link></LinkContainer>
+                    </Nav>
+                  </Navbar.Collapse>
+                </Container>
               </Navbar>
-              <div className="container">
+              <div className="container pt-4">
                 <Route path="/:version/vote" component={Vote} />
                 <Route path="/:version/ranks" component={Ranks} />
                 <Route path="/donate" component={Donate} />

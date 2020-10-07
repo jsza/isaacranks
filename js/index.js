@@ -8,6 +8,8 @@ import configureStore from './store/configureStore'
 
 import App from './containers/App'
 
+import '../scss/index.scss'
+
 
 
 const render = (Component, history, store, container) => {

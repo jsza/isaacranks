@@ -1,6 +1,6 @@
 import React from 'react'
 import P from 'prop-types'
-import {Col, Panel, Button, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import {Col, Card, Button, OverlayTrigger, Tooltip} from 'react-bootstrap'
 
 const HotkeyOverlay = (props) => {
   if (props.icon) {
@@ -33,23 +33,28 @@ export default class VotingPanel extends React.Component {
   };
 
   render() {
-    const link = this.props.href
-               ? (<a href={this.props.href}>{this.props.title}</a>) : this.props.title
-    const header = (<h2 className="panel-title">{link}</h2>)
-    const footer = this.props.onVote ? (
-      <HotkeyOverlay icon={this.props.hotkeyIcon} name={this.props.hotkeyName}>
-        <Button onClick={this.props.onVote}>{this.props.label}</Button>
+    const {href, title, bsStyle, label, onVote, children, hotkeyName, hotkeyIcon, ...props} = this.props
+    const link = href
+               ? (<a className="text-reset" href={href}>{title}</a>) : title
+    const header = (link)
+    const footer = onVote ? (
+      <HotkeyOverlay icon={hotkeyIcon} name={hotkeyName}>
+        <Button variant="dark" onClick={onVote}>{label}</Button>
       </HotkeyOverlay>
       ) : null
     return (
-      <Col md={4}>
-        <Panel bsStyle={this.props.bsStyle}
-               className="text-center"
-               header={header}
-               footer={footer}>
-          <p>{this.props.children}</p>
-        </Panel>
-      </Col>
+      <Card className="text-center mb-3"
+            border="primary">
+        <Card.Header className="bg-gradient-primary" as="h5">
+          {header}
+        </Card.Header>
+        <Card.Body>
+          <p>{children}</p>
+        </Card.Body>
+        <Card.Footer>
+          {footer}
+        </Card.Footer>
+      </Card>
       )
   }
 }
