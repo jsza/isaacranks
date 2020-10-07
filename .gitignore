@@ -16,3 +16,4 @@ static/js/bundle.js.map
 static/tmp/
 yesod-devel/
 /.ghc.environment.*
+yarn-error.log
