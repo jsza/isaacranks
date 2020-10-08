@@ -5,10 +5,10 @@ import {LinkContainer} from 'react-router-bootstrap'
 import PropTypes from 'prop-types'
 import {Route} from 'react-router-dom'
 
-import Vote from './Vote'
-import Ranks from './Ranks'
-import Donate from './Donate'
-import Changes from './Changes'
+import Vote from './scenes/Vote'
+import Ranks from './scenes/Ranks'
+import Donate from './scenes/Donate'
+import Changes from './scenes/Changes'
 
 
 @connect(state => ({routerState: state.router}))

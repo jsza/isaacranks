@@ -3,11 +3,11 @@ import P from 'prop-types'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {Jumbotron} from 'react-bootstrap'
-import Filters from '../components/Filters'
-import RanksTable from '../components/RanksTable'
-import ErrorAlert from '../components/ErrorAlert'
-import * as RanksActions from '../actions/Ranks'
-import {RanksState} from '../reducers/ranks'
+import Filters from 'isaacranks/components/Filters'
+import RanksTable from 'isaacranks/components/RanksTable'
+import ErrorAlert from 'isaacranks/components/ErrorAlert'
+import * as RanksActions from 'isaacranks/actions/Ranks'
+import {RanksState} from 'isaacranks/reducers/ranks'
 
 function mapStateToProps(state) {
   return {ranks: state.ranks}

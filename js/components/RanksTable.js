@@ -23,7 +23,7 @@ export default class RanksTable extends React.Component {
         return <Item key={item.isaacId} index={index} item={item} />
     })
     return (
-      <Table condensed hover responsive className="ranks-table" variant="dark">
+      <Table size="sm" hover responsive className="ranks-table" variant="dark">
         <thead>
           <tr>
             <th>#</th>

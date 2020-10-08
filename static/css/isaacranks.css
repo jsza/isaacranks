@@ -15,8 +15,9 @@ table.ranks-table > tbody > tr > td {
     vertical-align: middle;
 }
 
-table.ranks-table a.icon {
-    -webkit-scale: 0.75;
+table.ranks-table > thead > tr > th:first-child,
+table.ranks-table > tbody > tr > td:first-child {
+  padding-left: 2rem !important;
 }
 
 .vote-dump {

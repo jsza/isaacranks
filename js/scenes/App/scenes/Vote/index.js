@@ -5,9 +5,9 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {Map} from 'immutable'
 import {HotKeys} from 'react-hotkeys'
-import * as VoteActions from '../actions/Vote'
-import VotingBooth from '../components/VotingBooth'
-import ErrorAlert from '../components/ErrorAlert'
+import * as VoteActions from 'isaacranks/actions/Vote'
+import VotingBooth from 'isaacranks/components/VotingBooth'
+import ErrorAlert from 'isaacranks/components/ErrorAlert'
 
 function keyPressOnce(component, name, handler) {
   const down = (event) => {

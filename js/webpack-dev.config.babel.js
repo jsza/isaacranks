@@ -13,6 +13,11 @@ export default
     , filename: 'bundle.js'
     , publicPath: 'http://localhost:3002/'
     }
+  , resolve:
+    { alias:
+      { isaacranks: __dirname
+      }
+    }
   , plugins:
     [ new webpack.NoEmitOnErrorsPlugin()
     , new webpack.DefinePlugin(

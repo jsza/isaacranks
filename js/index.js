@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 
-import {ConnectedRouter} from 'react-router-redux'
-import createHistory from 'history/createBrowserHistory'
+import {ConnectedRouter} from 'connected-react-router'
+import {createBrowserHistory} from 'history'
 import configureStore from './store/configureStore'
 
-import App from './containers/App'
+import App from './scenes/App'
 
 import '../scss/index.scss'
 
@@ -28,7 +28,7 @@ function startup() {
   const container = document.createElement('div')
   document.body.appendChild(container)
 
-  const history = createHistory()
+  const history = createBrowserHistory()
   const store = configureStore(history)
   render(App, history, store, container)
 }

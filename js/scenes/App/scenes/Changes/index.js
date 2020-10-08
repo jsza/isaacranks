@@ -3,9 +3,9 @@ import P from 'prop-types'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {Jumbotron, Card, Col} from 'react-bootstrap'
-import {Changes as ChangesRecord} from '../reducers/changes'
-import * as ChangesActions from '../actions/Changes'
-import ErrorAlert from '../components/ErrorAlert'
+import {Changes as ChangesRecord} from 'isaacranks/reducers/changes'
+import * as ChangesActions from 'isaacranks/actions/Changes'
+import ErrorAlert from 'isaacranks/components/ErrorAlert'
 
 function mapStateToProps(state) {
   return {'changes': state.changes}
@@ -40,15 +40,15 @@ export default class Changes extends React.Component {
     } else if (error) {
       content = <ErrorAlert title="Unable to load changelog:" error={error} onReset={actions.loadChanges} />
     } else if (changes) {
-      const changelog = changes.map(entry =>
-        <>
+      const changelog = changes.map((entry, idx) =>
+        <React.Fragment key={idx}>
           <Col as="dt" md="2" className="text-right">
             {entry.get(0)}
           </Col>
           <Col as="dd" md="10">
-            <ul>{entry.get(1).map(line => <li>{line}</li>)}</ul>
+            <ul>{entry.get(1).map((line, idx) => <li key={idx}>{line}</li>)}</ul>
           </Col>
-        </>)
+        </React.Fragment>)
       content = (
         <Card>
           <Card.Body>
